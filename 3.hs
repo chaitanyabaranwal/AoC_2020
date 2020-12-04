@@ -10,7 +10,6 @@ countTrees mapRows rightJump downJump = go 0 downJump rightJump where
             '#' -> go (count + 1) (curRow + downJump) (mod (curCol + rightJump) (length (mapRows !! (curRow + downJump))))
 
 main = do
-    let list = []
     handle <- openFile "3.txt" ReadMode
     contents <- hGetContents handle
     let rows = words contents
